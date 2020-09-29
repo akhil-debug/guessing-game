@@ -1,6 +1,6 @@
 echo "Hello....Welcome to the guessing game"
-a=$(ls -l|wc -l)
-let a=$a-1
+a=$(ls -al|wc -l)
+let a=$a-3
 echo "Please guess the number of files in this folder"
 while [[ true ]]
 do
@@ -13,9 +13,12 @@ do
   	then
 		echo "That was close.....But your guess wasn't right"
 		echo "Try guessing a larger number"
- 	else
+ 	elif [[ n -eq a ]]
+	then
 		echo "Well done.....You guessed it right"
 		break
+	else
+		echo "Wrong input"
 	fi
 done
 echo "The directory contains $a files"
