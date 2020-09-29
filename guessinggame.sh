@@ -1,6 +1,5 @@
 echo "Hello....Welcome to the guessing game"
-a=$(ls -al|wc -l)
-let a=$a-3
+a=$(ls -al |grep "^-"|wc -l)
 echo "Please guess the number of files in this folder"
 while [[ true ]]
 do
